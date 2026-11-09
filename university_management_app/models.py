@@ -35,7 +35,7 @@ class Student(models.Model):
 
 
 class StudentId(models.Model):
-    matriculation_number = models.Charfield(max_length=30, unique=True)
+    matriculation_number = models.CharField(max_length=30, unique=True)
     student = models.OneToOneField(Student, on_delete=models.CASCADE)
     issued_at = models.DateField()
     expires_at = models.DateField()
