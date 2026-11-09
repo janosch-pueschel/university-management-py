@@ -5,7 +5,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
     email = models.EmailField(max_length=254, unique=True)
-    academic_title = models.CharField(max_length=100)
+    academic_title = models.CharField(max_length=100, blank=True)
 
 
 class CourseDescription(models.Model):
@@ -35,7 +35,7 @@ class Student(models.Model):
 
 
 class StudentId(models.Model):
-    matriculation_number = models.IntegerField(unique=True)
+    matriculation_number = models.Charfield(max_length=30, unique=True)
     student = models.OneToOneField(Student, on_delete=models.CASCADE)
     issued_at = models.DateField()
     expires_at = models.DateField()
